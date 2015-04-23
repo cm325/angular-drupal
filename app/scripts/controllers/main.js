@@ -8,10 +8,11 @@
  * Controller of the angularDrupalApp
  */
 angular.module('angularDrupalApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('MainCtrl', function ($scope, Stuff) {
+    $scope.stories = Stuff.stories;
+
+    $scope.author = function(authorId) {
+      console.log(authorId);
+      return _.findWhere(Stuff.authors, { uid: authorId }).name;
+    }
   });
