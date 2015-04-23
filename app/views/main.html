@@ -1,18 +1,13 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
-
 <div class="row">
-  <div ng-repeat="story in stories">
-    <h1>{{ story.title }}</h1>
-    <p>{{ story.timestamp }} by {{ author(story.author) }}</p>
-    <img ng-src="{{ story.img }}" width="200px">
-    {{ story.text }}
-    <a ng-href="{{ story.link }}">Full Story</a>
+  <div ng-repeat="story in stories" class="media">
+    <div class="media-left">
+      <img ng-src="{{ story.img }}" width="150px" class="media-object img-circle">
+    </div>
+    <div class="media-body">
+      <h2 class="media-heading">{{ story.title }}</h2>
+      <p class="help-block">{{ story.timestamp }} by {{ author(story.author) }}</p>
+      <p class="lead">{{ story.text }}</p>
+      <p><a ng-href="{{ story.link }}" class="btn btn-default" target="_blank">Full Story</a></p>
+    </div>
   </div>
 </div>
